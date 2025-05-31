@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+<!-- {} This is the jinja code and the extends helps to inherit the template from the layout file -->
+<!-- to use the layout file as well as to add some new components to the about file, we use the block statement which should be 
+ added to both layout as well as about file-->
+
+{% block content%}
+<div>
+    <P>We are inside the about page</P>
+    <p>We are learning the ml implementation using flask</p>
+</div>
+{% endblock %}
+
+

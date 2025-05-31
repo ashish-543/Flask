@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+<!-- This is how we perform operation in the backend for the value passed in the integer -->
+{% block content %}
+<h2>The given number is {{number}}</h2>
+{% if number == 0 %}
+    <p>The given input {{number}} is zero</p>
+{% elif number%2 == 0 %}
+    <p>The given input {{number}} is even</p>
+{% else %}
+    <p>The given input {{number}} is odd</p>
+{% endif %}
+{% endblock %}

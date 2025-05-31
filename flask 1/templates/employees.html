@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block content%}
+<!-- Here emp.items returns a tuple i.e id of the dict and the data of the id -->
+{% for emp_id, emp_data in emp.items() %}
+    <div>
+        <table>
+            <tr>
+                <td>ID:</td>
+                <td>{{emp_id}}</td>
+            </tr>
+            <tr>
+                <td>Name:</td>
+                <td>{{emp_data['name']}}</td>
+            </tr>
+            <tr>
+                <td>Age:</td>
+                <td>{{emp_data['age']}}</td>
+            </tr>
+            <tr>
+                <td>Position:</td>
+                <td>{{emp_data['position']}}</td>
+            </tr>
+        </table>
+    </div>
+    <br>
+{% endfor %}
+{% endblock %}

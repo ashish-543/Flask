@@ -1,0 +1,75 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<!-- The action attribute specifies where to send the form-data when a form is submitted -->
+<form action="" method="post">
+    <!-- to pass the csrf token to the server, we write hidden tag just after the form tag --> 
+     {{ form.hidden_tag() }}
+    <div>
+        {{ form.username.label }}
+        {{ form.username }}
+        {% if form.username.errors %}
+            {% for error in form.username.errors %}
+                <div>{{error}}</div>
+            {% endfor %}
+        {% endif %}
+    <!-- first we check if there is any error which is done during the form.validate_on_submit in the signup endpoint
+    Then we iterate through the errors if there is any -->
+    </div>
+    <br>
+    <div>
+        {{ form.email.label }}
+        {{ form.email }}
+        {% if form.email.errors %}
+            {% for error in form.email.errors %}
+                <div>{{error}}</div>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <br>
+    <div>
+        {{ form.gender.label }}
+        {{ form.gender }}
+        {% if form.gender.errors %}
+            {% for error in form.gender.errors %}
+                <div>{{error}}</div>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <br>
+    <div>
+        {{ form.DOB.label }}
+        {{ form.DOB }}
+        {% if form.DOB.errors %}
+            {% for error in form.DOB.errors %}
+                <div>{{error}}</div>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <br>
+    <div>
+        {{ form.password.label }}
+        {{ form.password }}
+        {% if form.password.errors %}
+            {% for error in form.password.errors %}
+                <div>{{error}}</div>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <br>
+    <div>
+        {{ form.confirm_password.label }}
+        {{ form.confirm_password }}
+        {% if form.confirm_password.errors %}
+            {% for error in form.confirm_password.errors %}
+                <div>{{error}}</div>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <br>
+    <div>
+        {{ form.submit() }}
+    </div>
+
+</form>
+{% endblock %}
